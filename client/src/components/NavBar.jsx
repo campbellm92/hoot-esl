@@ -5,9 +5,9 @@ export default function NavBar() {
 
   return (
     <div className="flex justify-center mt-4">
-      <nav className="flex justify-between items-center w-10/12 border-4 border-primary rounded-lg">
+      <nav className="flex justify-between items-center w-10/12 rounded-lg">
         <div>
-          <h1 className="font-bold text-text-primary px-4">ESL LOGO</h1>
+          <h1 className="font-bold text-text-primary">ESL LOGO</h1>
         </div>
 
         {/*  Desktop nav items */}
@@ -42,8 +42,8 @@ export default function NavBar() {
 
         {/* Mob menu */}
         {mobMenuOpen && (
-          <div className="absolute w-10/12 top-15 left-8 bg-text-primary md:hidden">
-            <div className="flex flex-col gap-4 p-4">
+          <div className="absolute w-10/12 top-15 bg-background md:hidden">
+            <div className="flex flex-col gap-4 py-4 [&>a]:hover:text-primary [&>a]:font-medium">
               <a href="">Games</a>
               <a href="">About</a>
               <a href="">Contact</a>
