@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Ubuntu", "sans-serif";
+
+  --color-primary: oklch(52% 0.105 223.128);
+  --color-secondary: oklch(85.2% 0.199 91.936);
+  --color-background: oklch(92% 0.004 286.32);
+  --color-text-primary: oklch(37% 0.013 285.805);
+}
+
+:root {
+  font-family: var(--font-display);
+  background-color: var(--background);
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+p,
+a {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
