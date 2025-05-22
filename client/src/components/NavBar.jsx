@@ -1,17 +1,55 @@
-import MenuIcon from "../assets/menu.svg";
+import { useState } from "react";
 
 export default function NavBar() {
+  const [mobMenuOpen, setMobMenuOpen] = useState(false);
+
   return (
     <div className="flex justify-center mt-4">
       <nav className="flex justify-between items-center w-10/12 border-4 border-primary rounded-lg">
         <div>
           <h1 className="font-bold text-text-primary px-4">ESL LOGO</h1>
         </div>
-        <div className="flex gap-4 px-6 [&>a]:hover:text-primary [&>a]:font-medium">
+
+        {/*  Desktop nav items */}
+        <div className="hidden md:flex gap-4 px-6 [&>a]:hover:text-primary [&>a]:font-medium">
           <a href="">Games</a>
           <a href="">About</a>
           <a href="">Contact</a>
         </div>
+
+        {/* Hamburger */}
+        <div
+          className="md:hidden px-4"
+          onClick={() => {
+            setMobMenuOpen(!mobMenuOpen);
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 9h16.5m-16.5 6.75h16.5"
+            />
+          </svg>
+        </div>
+
+        {/* Mob menu */}
+        {mobMenuOpen && (
+          <div className="absolute w-10/12 top-15 left-8 bg-text-primary md:hidden">
+            <div className="flex flex-col gap-4 p-4">
+              <a href="">Games</a>
+              <a href="">About</a>
+              <a href="">Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
     </div>
   );
