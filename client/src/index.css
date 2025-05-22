@@ -6,13 +6,14 @@
 
   --color-primary: oklch(52% 0.105 223.128);
   --color-secondary: oklch(85.2% 0.199 91.936);
+  --color-neutral: oklch(87.1% 0.006 286.286);
   --color-background: oklch(92% 0.004 286.32);
   --color-text-primary: oklch(37% 0.013 285.805);
 }
 
 :root {
   font-family: var(--font-display);
-  background-color: var(--background);
+  background-color: var(--color-background);
 }
 
 body {
