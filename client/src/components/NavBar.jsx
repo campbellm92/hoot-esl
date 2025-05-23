@@ -4,7 +4,7 @@ export default function NavBar() {
   const [mobMenuOpen, setMobMenuOpen] = useState(false);
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center mt-4 mb-10">
       <nav className="flex justify-between items-center w-10/12 rounded-lg">
         <div>
           <h1 className="font-bold text-text-primary">ESL LOGO</h1>
@@ -42,7 +42,7 @@ export default function NavBar() {
 
         {/* Mob menu */}
         {mobMenuOpen && (
-          <div className="absolute w-10/12 top-15 bg-background md:hidden">
+          <div className="absolute w-10/12 min-h-screen top-15 bg-background md:hidden">
             <div className="flex flex-col gap-4 py-4 [&>a]:hover:text-primary [&>a]:font-medium">
               <a href="">Games</a>
               <a href="">About</a>
