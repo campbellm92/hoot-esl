@@ -6,6 +6,10 @@ export default function Home() {
     <div className="flex flex-col gap-8 justify-center items-center">
       <Hero />
       <Games />
+      <Games />
+      <Games />
+      <Games />
+      <Games />
     </div>
   );
 }
