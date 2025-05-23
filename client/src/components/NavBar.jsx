@@ -11,7 +11,7 @@ export default function NavBar() {
         </div>
 
         {/*  Desktop nav items */}
-        <div className="hidden md:flex gap-4 px-6 [&>a]:hover:text-primary [&>a]:font-medium">
+        <div className="hidden md:flex gap-6 [&>a]:hover:text-primary [&>a]:font-medium">
           <a href="">Games</a>
           <a href="">About</a>
           <a href="">Contact</a>
