@@ -1,5 +1,5 @@
 import { useState } from "react";
-import IntroScreen from "./IntroScreen";
+import { IntroScreen } from "@localcomponents";
 import WordPuzzleGame from "./WordPuzzleGame";
 
 export default function Game() {
