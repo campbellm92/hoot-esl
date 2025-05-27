@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       "@ui": resolve(__dirname, "../packages/ui"),
       "@utils": resolve(__dirname, "../packages/utils"),
+      "@animations": resolve(__dirname, "../packages/animations"),
     },
   },
 });
