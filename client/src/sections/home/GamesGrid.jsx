@@ -2,7 +2,7 @@ import { Card } from "@ui";
 import { Button } from "@ui";
 import testImg from "../../assets/test.png";
 
-export default function Games() {
+export default function GamesGrid() {
   return (
     <>
       <div className="w-10/12 mx-auto">
