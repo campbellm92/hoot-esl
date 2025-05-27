@@ -7,7 +7,7 @@ export default function Card({
   button = null,
   ...rest
 }) {
-  const baseStyles = "flex flex-col w-full max-w-[20rem] p-4 rounded-lg";
+  const baseStyles = "flex flex-col w-full min-h-0 p-4 rounded-lg";
   const withSpacing = image ? "justify-evenly" : "justify-start";
   const variants = {
     primary: "bg-primary text-text-secondary",
@@ -19,7 +19,7 @@ export default function Card({
       {...rest}
     >
       {image && (
-        <div className="w-full h-38 overflow-hidden rounded-lg mb-4">
+        <div className="w-full aspect-video overflow-hidden rounded-lg mb-4 flex-shrink-0">
           <img
             src={image}
             alt={title}
@@ -30,7 +30,7 @@ export default function Card({
 
       <div>
         <h3 className="font-semibold mb-4">{title}</h3>
-        <p className="mb-4">{content}</p>
+        <p className="mb-4 leading-relaxed">{content}</p>
       </div>
       <div>{button && <div className="">{button}</div>}</div>
     </div>
