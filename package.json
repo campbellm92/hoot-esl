@@ -5,10 +5,12 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "client"
+    "client",
+    "server"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server"
   },
   "keywords": [],
   "author": "",
