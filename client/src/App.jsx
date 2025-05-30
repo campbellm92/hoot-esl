@@ -1,9 +1,10 @@
 import React, { Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { games } from "./gamesConfig";
-import NavBar from "./components/NavBar";
+import { NavBar, Footer } from "@localcomponents";
+// import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
         <Suspense fallback={<div>Loading... </div>}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            {games.map(({ path, component }) => {
+            {games.map(({ link, component }) => {
               const Game = React.lazy(component);
-              return <Route key={path} path={path} element={<Game />}></Route>;
+              return <Route key={link} path={link} element={<Game />}></Route>;
             })}
           </Routes>
         </Suspense>
