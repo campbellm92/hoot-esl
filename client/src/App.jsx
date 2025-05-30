@@ -2,9 +2,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { games } from "./gamesConfig";
 import { NavBar, Footer } from "@localcomponents";
-// import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-// import Footer from "./components/Footer";
 
 function App() {
   return (
