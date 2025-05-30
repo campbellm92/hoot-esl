@@ -1,4 +1,4 @@
-import ClickSpark from "../animations/ClickSpark";
+import { ClickSpark } from "@animations";
 
 export default function WordTile({
   children,
