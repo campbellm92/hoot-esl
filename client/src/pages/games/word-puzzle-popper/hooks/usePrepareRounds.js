@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useFetchWords from "./useFetchWords";
+import { useFetchWords } from "@globalhooks";
 import { shuffleArray } from "@utils";
 
 export default function usePrepareRounds(wordListPath, round) {
