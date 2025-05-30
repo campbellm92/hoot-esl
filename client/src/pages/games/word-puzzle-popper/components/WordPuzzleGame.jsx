@@ -1,6 +1,6 @@
 import WordTile from "./WordTile";
-import SlideInContent from "../animations/SlideInContent";
-import Button from "./Button";
+import { SlideInContent } from "@animations";
+import { Button } from "@ui";
 import { useState } from "react";
 import usePrepareRounds from "../hooks/usePrepareRounds";
 
