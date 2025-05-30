@@ -1,6 +1,6 @@
 // fetches word definitions from Mariam Webster API
 
-export async function fetchWordDefinition(word) {
+export default async function fetchWordDefinition(word) {
   const API_KEY = import.meta.env.VITE_API_KEY;
   const URL = "https://dictionaryapi.com/api/v3/references/learners/json/";
   try {
