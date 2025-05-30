@@ -10,7 +10,11 @@ export default function Game() {
       {gameHasStarted ? (
         <WordPuzzleGame />
       ) : (
-        <IntroScreen onStart={() => setGameHasStarted(true)} />
+        <IntroScreen
+          name="Word Puzzle Popper"
+          instructions="Click on the five words that belong to either nouns, verbs or adjectives!"
+          onStart={() => setGameHasStarted(true)}
+        />
       )}
     </>
   );
