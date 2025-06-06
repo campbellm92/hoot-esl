@@ -13,7 +13,7 @@ export default function WordPuzzleGame() {
   const [gameCompleted, setGameCompleted] = useState(false);
 
   const { gameWords, categoryName, correctWords, isLoading } = usePrepareRounds(
-    "../../data/a1-words.json",
+    "/data/a1-words-POS.json",
     round
   );
 
@@ -80,14 +80,18 @@ export default function WordPuzzleGame() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center w-screen h-screen">
+    <div className="flex flex-col justify-center items-center w-screen min-h-screen pb-96">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
         <>
-          <p className="mb-10 p-4 text-lg md:text-2xl text-center">
-            {`Find the five ${categoryName}!`}
-          </p>
+          <div className="text-center text-text-primary mb-10">
+            <p className="mb-5 font-semibold ">{`Find the five ${categoryName}!`}</p>
+            <p className="mb-1">
+              Round: {round}/{TOTAL_ROUNDS}
+            </p>
+            <p>Score: {score}</p>
+          </div>
 
           <SlideInContent key={round} distance={300}>
             <div className="grid grid-cols-2 grid-rows-3 md:flex md:flex-row justify-center gap-4 px-4 mb-10">
@@ -104,12 +108,7 @@ export default function WordPuzzleGame() {
                 ))}
             </div>
           </SlideInContent>
-          <div className="flex flex-col">
-            <p>
-              Round: {round}/{TOTAL_ROUNDS}
-            </p>
-            <p>Score: {score}</p>
-          </div>
+
           {feedback && <div className="text-lg">{feedback}</div>}
         </>
       )}
