@@ -10,7 +10,7 @@ export default function WordTile({
     if (isClicked) {
       return isCorrect ? "text-green-500" : "text-red-500";
     }
-    return "text-zinc-700";
+    return "text-text-primary";
   }
 
   return (
@@ -21,7 +21,7 @@ export default function WordTile({
         duration={300}
       >
         <div
-          className={`${getStyles()} text-center text-3xl font-semibold bg-zinc-200 w-full sm:w-auto h-auto p-4 rounded-md border-4 border-zinc-900 cursor-pointer`}
+          className={`${getStyles()} text-center text-3xl font-semibold bg-zinc-200 w-full sm:w-auto h-auto p-4 rounded-md border-4 border-primary cursor-pointer`}
           onClick={() => onClick(children)}
         >
           {children}
