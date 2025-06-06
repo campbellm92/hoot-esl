@@ -1,4 +1,4 @@
-import { cleanDefinition } from "../../utils/cleanDefinition";
+import { cleanDefinitions } from "@utils";
 import styles from "./MemoryCard.module.css";
 
 export default function MemoryCard({
@@ -24,7 +24,7 @@ export default function MemoryCard({
             type === "definition" ? styles.definition : styles.word
           }`}
         >
-          {cleanDefinition(content)}
+          {cleanDefinitions(content)}
         </div>
       </div>
     </div>
