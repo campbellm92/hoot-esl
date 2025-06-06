@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { shuffleArray } from "@utils";
-import { fetchWordDefinition } from "../utils/fetchWordDefinition";
+import { fetchWordDefinition } from "./fetchWordDefinition";
 
 export function useWordCards(wordListPath) {
   const [cards, setCards] = useState([]);
