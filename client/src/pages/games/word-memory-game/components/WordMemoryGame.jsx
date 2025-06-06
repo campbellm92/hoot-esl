@@ -4,7 +4,8 @@ import { useWordCards } from "../hooks/useWordCards.js";
 import MemoryCard from "./MemoryCard.jsx";
 
 export default function Game() {
-  const wordsPath = "../../data/a1-words.json";
+  // fix:
+  const wordsPath = "/data/a1-words-all.json";
   const { cards, setCards, loading } = useWordCards(wordsPath); // contains card info from the hook, incl id, type, content, matchId
   const [turns, setTurns] = useState(0);
   const [cardOne, setCardOne] = useState(null);
@@ -51,7 +52,7 @@ export default function Game() {
       <div className="grid grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-4 gap-2">
         {loading && <div>Loading...</div>}
         {cards.map((card) => (
-          <Card
+          <MemoryCard
             key={card.id}
             card={card}
             content={card.content}
