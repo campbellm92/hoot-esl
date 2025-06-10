@@ -11,6 +11,19 @@ export const games = [
     path: "./pages/games/word-puzzle-popper",
     component: () => import("./pages/games/word-puzzle-popper/components/Game"),
     link: "/games/word-puzzle-popper",
+    config: {
+      difficulty: {
+        label: "Difficulty",
+        type: "select",
+        options: ["Easy", "Medium", "Hard"],
+        default: "Medium",
+      },
+      level: {
+        label: "Language Level",
+        type: "select",
+        options: ["A1", "A2", "B1", "B2", "C1"],
+      },
+    },
   },
   {
     name: "Word Memory Game",
@@ -21,5 +34,18 @@ export const games = [
     path: "./pages/games/word-memory-game",
     component: () => import("./pages/games/word-memory-game/components/Game"),
     link: "/games/word-memory-game",
+    config: {
+      difficulty: {
+        label: "Difficulty",
+        type: "select",
+        options: ["Easy", "Medium", "Hard"],
+        default: "Medium",
+      },
+      level: {
+        label: "Language Level",
+        type: "select",
+        options: ["A1", "A2", "B1", "B2", "C1"],
+      },
+    },
   },
 ];
