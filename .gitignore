@@ -1,3 +1,6 @@
 node_modules/
 
 .env
+
+client/src/components/Logo.jsx
+client/src/components/Logo.module.css
