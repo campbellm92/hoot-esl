@@ -17,7 +17,11 @@ export default function MemoryCard({
 
   return (
     <div className={styles.card} onClick={handleClick}>
-      <div className={`${styles.cardInner} ${isFlipped ? styles.flipped : ""}`}>
+      <div
+        className={`${styles.cardInner} ${isFlipped ? styles.flipped : ""} ${
+          card.matched ? styles.matched : ""
+        }`}
+      >
         <div className={styles.cardFront}></div>
         <div
           className={`${styles.cardBack} ${

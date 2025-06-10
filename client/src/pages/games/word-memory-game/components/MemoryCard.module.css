@@ -1,7 +1,7 @@
 .card {
   perspective: 62.5rem;
-  width: 10rem;
-  height: 10rem;
+  width: 13rem;
+  height: 13rem;
   cursor: pointer;
 }
 
@@ -56,17 +56,10 @@
 
 .flipped {
   transform: rotateX(180deg);
+  border-radius: 0.5rem;
 }
 
-/* 
-
-  // let tailwindStyles =
-  //   "flex justify-center items-center text-center text-slate-100 bg-slate-800 size-52 m-2 px-2 rounded-md cursor-pointer";
-  // if (type === "word") {
-  //   tailwindStyles += " text-3xl border-2 border-slate-800";
-  // } else if (type === "definition") {
-  //   tailwindStyles += " text-md";
-  // }
-
-
-*/
+.matched {
+  border: 0.25rem solid oklch(72.3% 0.219 149.579);
+  border-radius: 0.5rem;
+}
