@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { useWordCards } from "../hooks/useWordCards.js";
 import MemoryCard from "./MemoryCard.jsx";
+import { Loading } from "@ui";
 
-export default function Game() {
-  // fix:
+export default function WordMemoryGame() {
   const wordsPath = "/data/a1-words-all.json";
-  const { cards, setCards, loading } = useWordCards(wordsPath); // contains card info from the hook, incl id, type, content, matchId
+  const { cards, setCards, isLoading } = useWordCards(wordsPath); // contains card info from the hook, incl id, type, content, matchId
   const [turns, setTurns] = useState(0);
   const [cardOne, setCardOne] = useState(null);
   const [cardTwo, setCardTwo] = useState(null);
@@ -48,21 +48,28 @@ export default function Game() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
-      <p className="text-2xl font-medium mb-5">Turns taken: {turns}</p>
-      <div className="grid grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-4 gap-2">
-        {loading && <div>Loading...</div>}
-        {cards.map((card) => (
-          <MemoryCard
-            key={card.id}
-            card={card}
-            content={card.content}
-            type={card.type}
-            handleChoice={handleChoice}
-            isFlipped={card === cardOne || card === cardTwo || card.matched}
-            disabled={disabled}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <div className="pb-96">
+          <Loading />
+        </div>
+      ) : (
+        <>
+          <p className="text-2xl font-medium mb-5">Turns taken: {turns}</p>
+          <div className="grid grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-4 gap-2">
+            {cards.map((card) => (
+              <MemoryCard
+                key={card.id}
+                card={card}
+                content={card.content}
+                type={card.type}
+                handleChoice={handleChoice}
+                isFlipped={card === cardOne || card === cardTwo || card.matched}
+                disabled={disabled}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
