@@ -1,16 +1,28 @@
 import { useEffect, useState } from "react";
 import { shuffleArray } from "@utils";
 import { fetchWordDefinition } from "./fetchWordDefinition";
+import { useFetchWords } from "@hooks";
 
 export function useWordCards(wordListPath) {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { words } = useFetchWords(wordListPath);
 
   useEffect(() => {
     const MAX_PAIRS = 8;
+
+    if (!words) return;
+
     async function loadAndPrepareCards() {
-      const wordResponse = await fetch(wordListPath);
-      const allWords = await wordResponse.json();
+      // const wordResponse = await fetch(wordListPath);
+      // const allWords = await wordResponse.json();
+
+      const nouns = words.A1["n."];
+      const verbs = words.A1["v."];
+      const adjectives = words.A1["adj."];
+
+      const allWords = nouns.concat(verbs, adjectives);
+
       const shuffledWords = shuffleArray(allWords);
 
       const validPairs = [];
