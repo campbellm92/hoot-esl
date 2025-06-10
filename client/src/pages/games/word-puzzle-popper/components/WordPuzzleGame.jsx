@@ -11,6 +11,7 @@ export default function WordPuzzleGame() {
   const [selectedWord, setSelectedWord] = useState();
   const [feedback, setFeedback] = useState("");
   const [gameCompleted, setGameCompleted] = useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   const { gameWords, categoryName, correctWords, isLoading } = usePrepareRounds(
     "/data/a1-words-POS.json",
@@ -20,6 +21,7 @@ export default function WordPuzzleGame() {
   const TOTAL_ROUNDS = 10;
 
   function handleWordChoice(word) {
+    if (disabled) return;
     setSelectedWord(word);
     if (correctWords.includes(word)) {
       if (!clickedCorrectWords.includes(word)) {
@@ -28,6 +30,7 @@ export default function WordPuzzleGame() {
         if (updatedCorrectWordsArray.length === correctWords.length) {
           setScore(score + 1);
           setFeedback("Well done! All correct words were found!");
+          setDisabled(true);
           setTimeout(() => handleGoToNextRound(), 1500);
         } else {
           setFeedback("Correct! Keep going!");
@@ -35,6 +38,7 @@ export default function WordPuzzleGame() {
       }
     } else {
       setFeedback("Try again!");
+      setDisabled(true);
       setTimeout(() => handleGoToNextRound(), 1500);
     }
   }
@@ -47,6 +51,7 @@ export default function WordPuzzleGame() {
       setClickedCorrectWords([]);
       setSelectedWord(null);
       setFeedback("");
+      setDisabled(false);
     }
   }
 
@@ -69,9 +74,11 @@ export default function WordPuzzleGame() {
 
   if (gameCompleted) {
     return (
-      <div className="flex flex-col justify-center items-center w-screen h-screen">
-        <h1 className="text-3xl font-semibold mb-6">Game Completed!</h1>
-        <p className="text-xl mb-8">
+      <div className="flex flex-col justify-center items-center w-screen min-h-screen pb-96">
+        <h1 className="text-3xl text-text-primary font-semibold mb-6">
+          Game Completed!
+        </h1>
+        <p className="text-xl text-text-primary mb-8">
           Your final score: {score} out of {TOTAL_ROUNDS}
         </p>
         <Button onClick={handleResetGame}>Play Again</Button>
@@ -102,6 +109,7 @@ export default function WordPuzzleGame() {
                     onClick={() => handleWordChoice(word)}
                     isClicked={isWordClicked(word)}
                     isCorrect={isWordCorrect(word)}
+                    disabled={disabled}
                   >
                     {word}
                   </WordTile>
