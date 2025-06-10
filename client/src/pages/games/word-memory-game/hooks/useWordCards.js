@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { shuffleArray } from "@utils";
 import { fetchWordDefinition } from "./fetchWordDefinition";
-import { useFetchWords } from "@hooks";
+import { useFetchWords } from "@globalhooks";
 
 export function useWordCards(wordListPath) {
   const [cards, setCards] = useState([]);
@@ -10,10 +10,12 @@ export function useWordCards(wordListPath) {
 
   useEffect(() => {
     const MAX_PAIRS = 8;
+    console.log(words);
 
     if (!words) return;
 
     async function loadAndPrepareCards() {
+      // del after testing:
       // const wordResponse = await fetch(wordListPath);
       // const allWords = await wordResponse.json();
 
@@ -22,6 +24,7 @@ export function useWordCards(wordListPath) {
       const adjectives = words.A1["adj."];
 
       const allWords = nouns.concat(verbs, adjectives);
+      console.log(allWords);
 
       const shuffledWords = shuffleArray(allWords);
 
@@ -63,7 +66,7 @@ export function useWordCards(wordListPath) {
       setIsLoading(false);
     }
     loadAndPrepareCards();
-  }, [wordListPath]);
+  }, [wordListPath, words]);
   //pass this down to Game.jsx
   return { cards, setCards, isLoading };
 }
