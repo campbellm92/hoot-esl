@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function useFetchWords(wordListPath) {
-  const [words, setWords] = useState([]);
+  const [words, setWords] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
