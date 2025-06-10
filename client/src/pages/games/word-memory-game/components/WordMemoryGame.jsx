@@ -5,7 +5,7 @@ import MemoryCard from "./MemoryCard.jsx";
 import { Loading } from "@ui";
 
 export default function WordMemoryGame() {
-  const wordsPath = "/data/a1-words-all.json";
+  const wordsPath = "/data/a1-words-POS.json";
   const { cards, setCards, isLoading } = useWordCards(wordsPath); // contains card info from the hook, incl id, type, content, matchId
   const [turns, setTurns] = useState(0);
   const [cardOne, setCardOne] = useState(null);
