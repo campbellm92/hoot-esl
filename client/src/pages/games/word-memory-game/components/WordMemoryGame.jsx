@@ -54,7 +54,9 @@ export default function WordMemoryGame() {
         </div>
       ) : (
         <>
-          <p className="text-2xl font-medium mb-5">Turns taken: {turns}</p>
+          <p className="text-2xl text-text-primary font-medium mb-5">
+            Turns taken: {turns}
+          </p>
           <div className="grid grid-cols-3 grid-rows-3 md:grid-cols-4 md:grid-rows-4 gap-2">
             {cards.map((card) => (
               <MemoryCard
