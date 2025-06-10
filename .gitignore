@@ -4,3 +4,5 @@ node_modules/
 
 client/src/components/Logo.jsx
 client/src/components/Logo.module.css
+
+*.txt
