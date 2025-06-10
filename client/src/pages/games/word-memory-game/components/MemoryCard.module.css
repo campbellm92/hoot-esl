@@ -1,7 +1,7 @@
 .card {
   perspective: 62.5rem;
-  width: 12rem;
-  height: 12rem;
+  width: 10rem;
+  height: 10rem;
   cursor: pointer;
 }
 
@@ -27,12 +27,12 @@
   opacity: 0.8;
   background-image: radial-gradient(
     ellipse farthest-corner at 10px 10px,
-    #1d293d,
-    #1d293d 50%,
-    #f1f5f9 50%
+    oklch(37% 0.013 285.805),
+    oklch(37% 0.013 285.805) 50%,
+    oklch(92% 0.004 286.32) 50%
   );
   background-size: 10px 10px;
-  border: 0.2rem solid oklch(27.9% 0.041 260.031);
+  border: 0.2rem solid oklch(37% 0.013 285.805);
 }
 
 .cardBack {
@@ -42,7 +42,7 @@
   text-align: center;
   padding: 1.5rem;
   color: oklch(96.8% 0.007 247.896);
-  background-color: oklch(27.9% 0.041 260.031);
+  background-color: oklch(37% 0.013 285.805);
   transform: rotateX(180deg);
 }
 
