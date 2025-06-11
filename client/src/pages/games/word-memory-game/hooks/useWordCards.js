@@ -3,7 +3,7 @@ import { shuffleArray } from "@utils";
 import { fetchWordDefinition } from "./fetchWordDefinition";
 import { useFetchWords } from "@globalhooks";
 
-export function useWordCards(wordListPath) {
+export function useWordCards(wordListPath, resetTrigger = 0) {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { words } = useFetchWords(wordListPath);
@@ -66,7 +66,7 @@ export function useWordCards(wordListPath) {
       setIsLoading(false);
     }
     loadAndPrepareCards();
-  }, [wordListPath, words]);
+  }, [wordListPath, words, resetTrigger]);
   //pass this down to Game.jsx
   return { cards, setCards, isLoading };
 }
