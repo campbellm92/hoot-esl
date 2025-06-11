@@ -13,6 +13,8 @@ export default function WordMemoryGame() {
   const [disabled, setDisabled] = useState(false);
 
   function handleChoice(card) {
+    if (disabled) return;
+    if (cardOne && card.id === cardOne.id) return;
     cardOne ? setCardTwo(card) : setCardOne(card);
   }
 
