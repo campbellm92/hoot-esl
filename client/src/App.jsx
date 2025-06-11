@@ -1,8 +1,10 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { games } from "./gamesConfig";
+import { games } from "./config/gamesConfig";
+import { tools } from "./config/toolsConfig";
 import { NavBar, Footer } from "@localcomponents";
 import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -16,6 +18,11 @@ function App() {
               const Game = React.lazy(component);
               return <Route key={link} path={link} element={<Game />}></Route>;
             })}
+            {tools.map(({ link, component }) => {
+              const Tool = React.lazy(component);
+              return <Route key={link} path={link} element={<Tool />}></Route>;
+            })}
+            <Route path="/about" element={<About />}></Route>
           </Routes>
         </Suspense>
         <Footer />
