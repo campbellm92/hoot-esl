@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import HootLogo from "./HootLogo";
 
 export default function NavBar() {
   const [mobMenuOpen, setMobMenuOpen] = useState(false);
 
   return (
     <div className="flex justify-center mt-4 mb-10">
-      <nav className="flex justify-between items-center w-10/12 rounded-lg">
-        <div>
-          <Link to="/">
-            <h1 className="font-bold text-text-primary">ESL LOGO</h1>
-          </Link>
+      <nav className="flex justify-between items-end w-10/12 rounded-lg">
+        <div className="flex items-center gap-3">
+          <HootLogo />
         </div>
 
         {/*  Desktop nav items */}
-        <div className="hidden md:flex gap-6 [&>a]:hover:text-primary [&>a]:font-medium">
+        <div className="hidden md:flex gap-6  [&>a]:text-text-primary [&>a]:hover:text-primary [&>a]:font-medium">
           <Link to="/">
             <a>Home</a>
           </Link>
