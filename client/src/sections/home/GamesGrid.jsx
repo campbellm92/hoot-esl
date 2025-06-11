@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card } from "@ui";
 import { Button } from "@ui";
-import { games } from "../../gamesConfig";
+import { games } from "../../config/gamesConfig";
 
 export default function GamesGrid() {
   return (
