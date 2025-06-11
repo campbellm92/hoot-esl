@@ -2,6 +2,7 @@ import WordTile from "./WordTile";
 import { SlideInContent } from "@animations";
 import { Button } from "@ui";
 import { useState } from "react";
+import { Loading } from "@ui";
 import usePrepareRounds from "../hooks/usePrepareRounds";
 
 export default function WordPuzzleGame() {
@@ -89,7 +90,7 @@ export default function WordPuzzleGame() {
   return (
     <div className="flex flex-col justify-center items-center w-screen min-h-screen pb-96">
       {isLoading ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
         <>
           <div className="text-center text-text-primary mb-10">
