@@ -12,6 +12,9 @@ export default function Card({
   const variants = {
     primary: "bg-primary text-text-secondary",
     primaryOutline: "bg-background text-text-primary border-4 border-primary",
+    secondary: "bg-secondary text-text-secondary",
+    secondaryOutline:
+      "bg-background text-text-primary border-4 border-secondary",
   };
   return (
     <div
